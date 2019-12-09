@@ -32,12 +32,21 @@ class MainActivity : AppCompatActivity() {
            val tViewInterest = (tViewLoan.toInt() * eTextInterestRate.text.toString().toDouble() * eTextLoanPeriod.text.toString().toInt()).toString()
            val tViewMonthlyRepayment = ((tViewLoan.toInt()+tViewInterest.toDouble()) / eTextLoanPeriod.text.toString().toInt() / 12).toString()
 
+
             textViewLoan.setText("Loan : " + tViewLoan)
             textViewInterest.setText("Interest : " + tViewInterest)
             textViewMonthlyRepayment.setText("Monthly Repayment : " + tViewMonthlyRepayment)
         })
 
-
+        bReset.setOnClickListener(View.OnClickListener {
+            editTextCarPrice.text.clear()
+            editTextDownPayment.text.clear()
+            editTextInterestRate.text.clear()
+            editTextLoanPeriod.text.clear()
+            textViewLoan.setText("Loan : ")
+            textViewInterest.setText("Interest : ")
+            textViewMonthlyRepayment.setText("Monthly Repayment  :")
+        })
     }
 
 
